@@ -1185,15 +1185,15 @@
   resolved "https://registry.yarnpkg.com/@panva/asn1.js/-/asn1.js-1.0.0.tgz#dd55ae7b8129e02049f009408b97c61ccf9032f6"
   integrity sha512-UdkG3mLEqXgnlKsWanWcgb6dOjUzJ+XC5f+aWw30qrtjxeNUSfKX1cd5FBzOaXQumoe9nIqeZUvrRJS03HCCtw==
 
-"@prisma/cli@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.7.0.tgz#af9fd31f24babc9828cc9ab6d8b8735729b320e7"
-  integrity sha512-OCiTV6Xs9GHUk4iJGQeJizyUyrm7pnKCjoeulN+OXAdbfkLwNlRC+/H/8aOwcXx+Nej/QgXoix9CGcs+OYrdnA==
+"@prisma/cli@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.9.0.tgz#c6f6652890783b899f266537e90e69c3481f5474"
+  integrity sha512-wPk4ehyTtVM7ZarWs16MhOc6kwLV/gZFardMvUeh46rlBwrklMdKtNChzzPa3wurrUPQ5KTbuRBz5Mgf7AdD/w==
 
-"@prisma/client@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.7.0.tgz#fc7d4a3f7c5c8d865de74476a01cef606c02ba5e"
-  integrity sha512-9QkicjHSJwRa05eYdm4J4T3UXdF9SfRboQ8eCvrExOkvl1bhEEeACv0D4dGdmbxr2O/xAwUAW5T9XdJnzOQmGw==
+"@prisma/client@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.9.0.tgz#acfaca0c5695d7f439e5af54b7cd0f7fb5926340"
+  integrity sha512-VLXw6s13xakIrV9Z8Ftw0j+mbXuvbRkxYv3X5hRZdPN1NAwgeXJmrrTK9MS2HDvW8eGZL7P8OaUSNQ3Sfgvr/Q==
   dependencies:
     pkg-up "^3.1.0"
 
@@ -4521,7 +4521,7 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
 "next-prisma-plugin@file:..":
-  version "0.0.2"
+  version "0.0.0-dripip"
 
 next-tick@~1.0.0:
   version "1.0.0"
