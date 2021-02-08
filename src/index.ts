@@ -16,8 +16,10 @@ const withPrismaPlugin = (nextConfig = {}) => (
   phase: 'phase-export' | 'phase-production-build' | 'phase-production-server' | 'phase-development-server',
   thing: any
 ) => {
+  let internalConfigObj = typeof nextConfig === 'function' ? nextConfig(phase, thing) : nextConfig
+
   if (phase === 'phase-development-server') {
-    return Object.assign({}, nextConfig, {
+    return Object.assign({}, internalConfigObj, {
       webpack(config: any, options: any) {
         const ignore = ['.prisma/client', '@prisma/client']
 
@@ -26,17 +28,23 @@ const withPrismaPlugin = (nextConfig = {}) => (
         const ignored = config.watchOptions.ignored
           .filter((ignored: string) => ignored !== '**/node_modules/**')
           .concat(excludes)
-        return Object.assign(config, {
+
+        Object.assign(config, {
           plugins: [...config.plugins, new PrismaClientReloaderWebpackPlugin()],
           watchOptions: {
             ...config.watchOptions,
             ignored,
           },
         })
+
+        if (typeof internalConfigObj.webpack == 'function') {
+          return internalConfigObj.webpack(config, options)
+        }
+
+        return config
       },
     })
   }
-  let internalConfigObj = typeof nextConfig === 'function' ? nextConfig(phase, thing) : nextConfig
   return internalConfigObj
 }
 

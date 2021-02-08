@@ -21,4 +21,21 @@ describe('withPrismaPlugin', () => {
     const newConfig = withPrismaPlugin(nextConfig)('phase-development-server', {})
     expect(newConfig).toHaveProperty('webpack')
   })
+
+  it('should call nextConfig function and add webpack property', () => {
+    const nextConfig = () => ({ foo: 'bar' })
+
+    const newConfig = withPrismaPlugin(nextConfig)('phase-development-server', {})
+    expect(newConfig).toHaveProperty('webpack')
+  })
+
+  it('should call nextConfig.webpack function', () => {
+    const nextConfig = () => ({ webpack: (config: {}) => ({ ...config, foo: 'bar' }) })
+
+    const newConfig = withPrismaPlugin(nextConfig)('phase-development-server', {})
+    expect(newConfig).toHaveProperty('webpack')
+    expect(newConfig.webpack({ plugins: [], watchOptions: { ignored: [] } })).toMatchObject({
+      foo: 'bar',
+    })
+  })
 })
