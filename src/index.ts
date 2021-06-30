@@ -22,7 +22,7 @@ const withPrismaPlugin = (nextConfig = {}) => (
         const ignore = ['.prisma/client', '@prisma/client']
 
         // const includes = ignore.map(module => (new RegExp(`${module}(?!.*node_modules)`)));
-        const excludes = [new RegExp(`node_modules(?!/(${ignore.join('|')})(?!.*node_modules))`)]
+        const excludes = [new RegExp(`node_modules(?!/(${ignore.join('|')})(?!.*node_modules))`).toString()]
         const ignored = config.watchOptions.ignored
           .filter((ignored: string) => ignored !== '**/node_modules/**')
           .concat(excludes)
